@@ -12,5 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('inicio');
 });
+
+
+Route::get('funcionarios', 'Rh\funcionariosController@index')->name('funcionarios');
+Route::get('funcionarios/editar/{id}', 'Rh\funcionariosController@edit')->name('funcionarios.editar');

@@ -2987,9 +2987,20 @@ label {
 }
 
 .table-align-center > tbody > tr > td{
-
   text-align: center;
 }
+.table-align-center > tbody > tr > td{
+  text-align: left;
+}
+
 .form-control{
   color:#1d2124f2;
+}
+
+.img-formulario{
+  width: 118px;
+}
+
+.mouse-pointer{
+  cursor: pointer
 }

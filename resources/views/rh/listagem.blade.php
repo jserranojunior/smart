@@ -1,7 +1,6 @@
 @extends('layouts.header')
 
 @section('content')    
-
 <section class="dashboard-header">
     <div class="container-fluid">        
         <div class="row d-flex">
@@ -12,7 +11,7 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-striped table-sm ">
+                                <table class="table table-striped table-sm table-hover">
                                     <thead>
                                         <tr>
                                             <th>#</th>
@@ -22,7 +21,7 @@
                                         </tr>
                                         <tbody>
                                             @foreach($dados as $item)
-                                                <tr>
+                                                <tr class="mouse-pointer" onclick="editarId('funcionarios','{{$item->cd_codigo}}');">
                                                     <td>1</td>
                                                     <td>{{$item->cd_matricula}}</td>
                                                     <td>{{$item->nm_nome}}</td>

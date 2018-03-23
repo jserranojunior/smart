@@ -84,7 +84,7 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-sm-6">
-              <p>Vdlap &copy; 1994-2018</p>
+              <p>Vdlap &copy; 2018</p>
             </div>
             <div class="col-sm-6 text-right">
               <p>Todos os direiros reservados <a href="https://bootstrapious.com" class="external"></a></p>
@@ -106,5 +106,6 @@
     <!-- <script src="js/charts-home.js"></script> -->
     <!-- Main File-->
     <script src="/js/front.js"></script>
+    <script src="/js/actions.js"> </script> 
   </body>
 </html>

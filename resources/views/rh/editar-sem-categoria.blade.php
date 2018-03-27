@@ -7,24 +7,22 @@
         <div class="row d-flex">
             <div class="col-lg">
                 <div class="card">
-                    
+                    <div class="card-header">
+                        <div class="row">
+                        <div class="col-sm-2">
+                            <img src="/img/avatar-icone.png"  class="img-formulario img-fluid" alt="">
+                        </div>   
+                        <div class="col-sm-10">
+                        
+                        </div>
+                    </div>          
+                        
+                    </div>
                     <div class="card-body">
                         <form action="#" class="">                      
-                            @foreach($dados['funcionario'] as $item)                                               
-                            
-                            <div class="row row-categorias-funcionario">
-                                    <div class="col-md">
-                                        <p class="text-center text-primary text-bold">FUNCIONARIO</p>
-                                    </div>
-                                </div>
-                            <table class="table table-sm table-align-left">
-                                <tr>
-                                    <td rowspan="4">
-                                        <img src="/img/avatar-icone.png"  class="img-formulario img-fluid" alt="">
-                                    </td> 
-                                </tr>
-                                <tr>
-                                                                       
+                            @foreach($dados as $item)                                               
+                                <table class="table table-sm table-align-left">
+                                <tr>                                    
                                     <td >
                                         <label for="nm_nome">Nome</label>                                    
                                         </td>
@@ -65,13 +63,7 @@
                                         </select>
                                     </td>
                                 </tr>
-                            </table>
-                                <div class="row row-categorias-funcionario">
-                                        <div class="col-md">
-                                            <p class="text-center text-primary text-bold">ENDEREÇO</p>
-                                        </div>
-                                    </div>
-                                    <table class="table table-sm table-align-left">
+
                                 <tr>
                                     <td>
                                         <label for="nm_cep">CEP</label>
@@ -127,14 +119,7 @@
                                         <input type="text" name="nm_estado" value="{{$item->nm_estado}}" class="form-control-sm form-control">
                                     </td>                                      
                                 </tr>  
-                            </table>
-                            <div class="row row-categorias-funcionario">
-                                <div class="col-md">
-                                    <p class="text-center text-primary text-bold">PARENTES E DEPENDENTES</p>
-                                </div>
-                            </div>
-                            <table class="table table-sm table-align-left">
-                            
+
                                 <tr>
                                     <td>
                                         <label for="nm_conjuge">Cônjuge</label>                                    
@@ -191,65 +176,6 @@
                                         <input type="text" name="" value="" class="form-control-sm form-control">
                                     </td>                      
                                 </tr>
-                            </table>
-                            <div class="row row-categorias-funcionario">
-                                    <div class="col-md">
-                                        <p class="text-center text-primary text-bold">DEPENDENTES</p>
-                                    </div>
-                                </div>
-                                    <table class="table table-sm table-align-left">
-                                            <tr>
-                                                    <td>
-                                                        <label>Nome</label>  
-                                                    </td>
-                                                    <td>
-                                                        <label>Parentesco</label>  
-                                                    </td>
-                                                    <td>
-                                                        <label>Data de Nascimento</label>  
-                                                    </td>
-                                                    <td>
-                                                        <label for="cd_categoria">Nome</label>  
-                                                    </td>    
-                                                    <td>
-                                                            <label for="cd_categoria">Observações</label>  
-                                                        </td>                                            
-                                                    <td class="print-none text-right"> 
-                                                        <div class="btn btn-primary btn-sm">
-                                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                                        </div> 
-                                                    </td>
-                                                </tr>
-                                        @foreach($dados['dependentes'] as $dependente)
-                                           <tr>
-                                               <td>{{$dependente->nm_nome}}</td>
-                                               <td>
-                                                   {{$dependente->nm_parentesco}}
-                                                </td>
-                                               <td>{{$dependente->dt_nascimento}}</td>
-                                               <td>
-                                                    @if($dependente->cd_sexo == 1)
-                                                        Masculino
-                                                    @elseif($dependente->cd_sexo == 2)
-                                                        Feminino
-                                                    @endif                                               
-                                               </td>
-                                               <td>{{$dependente->nm_obs}}</td>
-                                               <td class="print-none text-right">
-                                                    <div class="btn btn-danger btn-sm">
-                                                            <i class="fa fa-trash" aria-hidden="true"></i>
-                                                    </div>
-                                                </td> 
-                                           </tr>
-                                        @endforeach
-    
-                                    </table>
-                            <div class="row row-categorias-funcionario">
-                                <div class="col-md">
-                                    <p class="text-center text-primary text-bold">DOCUMENTOS</p>
-                                </div>
-                            </div>
-                            <table class="table table-sm table-align-left">
                                 <tr>
                                     <td>
                                         <label for="cd_pis">PIS</label>                                    
@@ -330,13 +256,6 @@
                                         <input type="text" name="nr_tit_eleitor_seccao" value="{{$item->nr_tit_eleitor_seccao}}" class="form-control-sm form-control">
                                     </td>                      
                                 </tr>
-                            </table>
-                            <div class="row row-categorias-funcionario">
-                                <div class="col-md">
-                                    <p class="text-center text-primary text-bold">BENEFÍCIOS</p>
-                                </div>
-                            </div>
-                            <table class="table table-sm table-align-left">
                                 <tr>
                                     <td>
                                         <label for="nm_banco">Banco</label>                                    
@@ -390,22 +309,6 @@
                                     <td  colspan="">
                                         <input type="text" name="cd_assistencia_medica_matricula" value="{{$item->cd_assistencia_medica_matricula}}" class="form-control-sm form-control">
                                     </td>
-                                </tr>    
-                            </table>
-                            <div class="row row-categorias-funcionario">
-                                <div class="col-md">
-                                    <p class="text-center text-primary text-bold">MÉDICO E VACINAÇÃO</p>
-                                </div>
-                            </div>
-                            <table class="table table-sm table-align-left">
-
-                                <tr>
-                                    <td>
-                                        <label for="dt_exame_medico">Data Exame Médico</label>                                    
-                                    </td>
-                                    <td  colspan="">
-                                        <input type="text" name="dt_exame_medico" value="{{$item->dt_exame_medico}}" class="form-control-sm form-control">
-                                    </td>  
                                     <td>
                                         <label for="cd_assistencia_medica_matricula">SCR</label>                                    
                                     </td>
@@ -414,7 +317,10 @@
                                             <option @if($item->nr_scr == 0)selected @endif value="0">Não</option>
                                             <option @if($item->nr_scr == 1)selected @endif value="1">Sim</option>                                                                                        
                                         </select> 
-                                    </td>  
+                                    </td>   
+                                                          
+                                </tr> 
+                                <tr>
                                     <td>
                                         <label for="nr_hepatite_b">Hepatite B</label>                                    
                                     </td>
@@ -425,10 +331,7 @@
                                             <option @if($item->nr_hepatite_b == 2)selected @endif value="2">2° Dose</option> 
                                             <option @if($item->nr_hepatite_b == 3)selected @endif value="3">3° Dose</option>                                              
                                         </select> 
-                                    </td>                                                                                              
-                                </tr> 
-                                <tr>
-                                    
+                                    </td> 
                                     <td>
                                         <label for="nr_dupla_adulto">Dupla Adulto</label>                                    
                                     </td>
@@ -447,13 +350,6 @@
                                         <input type="text" name="dt_dupla_adulto_validade" value="{{$item->dt_dupla_adulto_validade}}" class="form-control-sm form-control">
                                     </td>                       
                                 </tr> 
-                            </table>
-                            <div class="row row-categorias-funcionario">
-                                <div class="col-md">
-                                    <p class="text-center text-primary text-bold">REGISTRO MÉDICO</p>
-                                </div>
-                            </div>
-                            <table class="table table-sm table-align-left">
                                 <tr>
                                     <td>
                                         <label for="cd_conspro">COREN</label>                                    
@@ -529,16 +425,14 @@
                                         <input type="text" name="dt_rgproval" value="{{$item->dt_rgproval}}" class="form-control-sm form-control">
                                     </td>                      
                                 </tr> 
-                            </table>
-                            <div class="row row-categorias-funcionario">
-                                <div class="col-md">
-                                    <p class="text-center text-primary text-bold">INFORMAÇÕES DE CONTRATO</p>
-                                </div>
-                            </div>
-                            <table class="table table-sm table-align-left">
                                 
                                 <tr>
-                                    
+                                    <td>
+                                        <label for="dt_exame_medico">Data Exame Médico</label>                                    
+                                    </td>
+                                    <td  colspan="">
+                                        <input type="text" name="dt_exame_medico" value="{{$item->dt_exame_medico}}" class="form-control-sm form-control">
+                                    </td>
                                     <td>
                                         <label for="dt_admissao_geral">Data Admissão</label>                                    
                                     </td>
@@ -551,96 +445,8 @@
                                         <input type="text" name="dt_demissao_geral" value="{{$item->dt_demissao_geral}}" class="form-control-sm form-control">
                                     </td>                      
                                 </tr>
-                            </table>
-                            <div class="row row-categorias-funcionario">
-                                <div class="col-md">
-                                    <p class="text-center text-primary text-bold">CONTATOS</p>
-                                </div>
-                            </div>
-                            <table class="table table-sm table-align-left table-hover">
-                                <tr>
-                                    <td>
-                                        <label for="cd_categoria">Tipo de Contato</label>  
-                                    </td>
-                                    <td>
-                                        <label for="cd_categoria">Contato</label>  
-                                    </td>
-                                    <td>
-                                        <label for="cd_categoria">Observações</label>  
-                                    </td>
-                                    <td>
-                                        <label for="cd_categoria">Nome</label>  
-                                    </td>
-                                    <td>  
-                                        <label for="cd_categoria">Parentesco</label>  
-                                    </td>
-                                    <td class="print-none"> 
-                                        <div class="btn btn-primary btn-sm">
-                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                        </div> 
-                                    </td>
-                                </tr>   
-                                <tr>
-                                        <td>
-                                            <select name="cd_categoria" class="form-control">
-                                                <option value="0"></option>
-                                                <option value="1">Telefone</option>
-                                                <option value="2">Celular</option> 
-                                                <option value="3">E-mail</option>                                              
-                                                <option value="4">Nextel</option>  
-                                                <option value="4">Urgencia</option> 
-                                            </select> 
-                                        </td>
-                                        <td>
-                                            <input type="text" name="nm_numero"  class="form-control-sm form-control">
-                                        </td>
-                                        <td>
-                                            <input type="text" name="nm_obs"  class="form-control-sm form-control">
-                                        </td>
-                                        <td>
-                                            <input type="text" name="nm_nome"  class="form-control-sm form-control">
-                                        </td>
-                                        <td>
-                                            <input type="text" name="nm_cargo"  class="form-control-sm form-control">
-                                        </td>                                        
-                                         
-                                    </tr>
-                                @foreach($dados['contatos'] as $contato)
-                                <tr>
-                                    <td>@if($contato->cd_categoria == 1)
-                                            Telefone 
-                                        @elseif($contato->cd_categoria == 2)
-                                            Celular
-                                        @elseif($contato->cd_categoria == 3)
-                                            Email
-                                        @elseif($contato->cd_categoria == 4)
-                                            Nextel 
-                                        @elseif($contato->cd_categoria == 5)
-                                            Urgencia    
-                                        @endif
-                                        
-                                    </td>
-                                    <td>
-                                            {{$contato->nm_numero}}
-                                   </td>
-                                    <td>
-                                            {{$contato->nm_obs}}
-                                    </td>
-                                    <td>
-                                            {{$contato->nm_nome}}
-                                    </td>
-                                    <td>
-                                            {{$contato->nm_cargo}}
-                                     </td>
-                                    <td class="print-none">
-                                        <div class="btn btn-danger btn-sm">
-                                                <i class="fa fa-trash" aria-hidden="true"></i>
-                                        </div>
-                                    </td>                                     
-                                </tr>
-                                @endforeach
+
                                 </table>
-                            
                             @endforeach                            
                         </form>                        
                     </div>

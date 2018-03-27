@@ -787,9 +787,7 @@ nav.navbar a.menu-btn:hover {
 *      STATISTICS
 * ==========================================================
 */
-.statistics {
-  /* User Activity ------------- */
-}
+
 
 .statistics div[class*='col-'] .card {
   padding: 20px;
@@ -1759,8 +1757,8 @@ STYLE SWITCHER FOR DEMO
 
 .btn-primary:hover {
   color: color-yiq(#2b954b);
-  background-color: #2b954b;
-  border-color: #288b46;
+  background-color: #2b5a95;
+  border-color: #2b5a95;
 }
 
 .btn-primary:focus, .btn-primary.focus {
@@ -1775,9 +1773,9 @@ STYLE SWITCHER FOR DEMO
 
 .btn-primary:not([disabled]):not(.disabled):active, .btn-primary:not([disabled]):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle {
-  color: color-yiq(#288b46);
-  background-color: #288b46;
-  border-color: #258141;
+  color: color-yiq(#237e92);
+  background-color: #237e92;
+  border-color: #237e92;
   -webkit-box-shadow: 0 0 0 0.2rem rgba(51, 179, 90, 0.5);
   box-shadow: 0 0 0 0.2rem rgba(51, 179, 90, 0.5);
 }
@@ -2436,7 +2434,7 @@ mark,
 }
 
 a.text-primary:focus, a.text-primary:hover {
-  color: #288b46 !important;
+  color: #237e92 !important;
 }
 
 /*
@@ -2560,7 +2558,7 @@ a.text-primary:focus, a.text-primary:hover {
 }
 
 a.bg-primary:focus, a.bg-primary:hover {
-  background-color: #288b46 !important;
+  background-color: #237e92 !important;
 }
 
 .bg-secondary {
@@ -2656,7 +2654,7 @@ a.bg-dark:focus, a.bg-dark:hover {
 }
 
 a.text-primary:focus, a.text-primary:hover {
-  color: #288b46 !important;
+  color: #237e92 !important;
 }
 
 .text-secondary {
@@ -2723,7 +2721,7 @@ a.text-dark:focus, a.text-dark:hover {
 .badge-primary[href]:focus, .badge-primary[href]:hover {
   color: color-yiq(#339fb3);
   text-decoration: none;
-  background-color: #288b46;
+  background-color: #237e92;
 }
 
 .badge-secondary {
@@ -2998,9 +2996,18 @@ label {
 }
 
 .img-formulario{
-  width: 118px;
+  width:90px;
 }
 
 .mouse-pointer{
   cursor: pointer
+}
+
+select.form-control:not([size]):not([multiple]) {
+  height: calc(2.25rem + -3px);
+}
+
+.row-categorias-funcionario > .col-md > p {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
 }

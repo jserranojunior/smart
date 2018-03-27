@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Rh;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use DB;
+use App\Models\Rh\funcionarios;
 
 class funcionariosController extends Controller
 {
@@ -26,15 +27,14 @@ class funcionariosController extends Controller
     public function edit(Request $request){
 
        $id = $request->id;
-        
-        $funcionario  = DB::table('tbl_funcionario')        
-        ->where('cd_codigo', $id)        
-        ->orderBy('nm_nome')
-        ->get();
+       $funcionario = new funcionarios(); 
+       $funcionario = $funcionario->editar($id); 
 
-        $funcionario = ['dados' => $funcionario];
+        $dados = ['dados' => $funcionario];
 
-        return view('rh.editar')->with($funcionario);
+//dd($dados['dados']['funcionario']);
+
+        return view('rh.editar')->with($dados);
     }
 
 }

@@ -18,3 +18,7 @@ Route::get('/', function () {
 
 Route::get('funcionarios', 'Rh\funcionariosController@index')->name('funcionarios');
 Route::get('funcionarios/editar/{id}', 'Rh\funcionariosController@edit')->name('funcionarios.editar');
+
+Route::get('variaveis', 'Rh\variaveisMensaisController@index')->name('variaveis');
+
+Route::get('diastrabalhados', 'Rh\diasTrabalhadosController@index')->name('diastrabalhados');

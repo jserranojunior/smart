@@ -49,8 +49,137 @@
           <h5 class="sidenav-heading text-center">Menu</h5>
 
           <ul id="side-admin-menu" class="side-menu list-unstyled"> 
-          <li><a href="/"> <i class="icon-home"></i>Inicio</a></li>
-            <li> <a href="{{ route('funcionarios') }}"> <i class="fa fa-users"> </i>Funcionários</a></li>
+            <li><a href="/"> <i class="icon-home"></i>Inicio</a></li>         
+            <li><a href="#rhMenu" aria-expanded="false" data-toggle="collapse" class="collapsed">
+              <i class="fa fa-users"></i>RH </a>
+              <ul id="rhMenu" class="list-unstyled collapse" style="">
+                <li> <a href="{{ route('funcionarios') }}"> <i class="fa fa-users"> </i>Funcionários</a></li>
+                <li>
+                  <a href="{{ route('variaveis') }}"> <i class="fa fa-bar-chart"> </i>Variaveis Mensais</a>
+                </li>
+                <li>
+                  <a href="#"> <i class="fa fa-university text-danger"> </i>Contabilidade</a>
+                </li>   
+                <li>
+                  <a href="{{ route('diastrabalhados') }}"> <i class="fa fa-calendar"> </i>Qtd. Dias Trabalhados</a>
+                </li>
+                <li>
+                  <a href="#"> <i class="fa fa-calendar-check-o text-danger"> </i>Escala de Plantão</a>
+                </li>
+                <li>
+                  <a href="#"> <i class="fa fa-file-text-o text-danger"> </i>Recibos</a>
+                </li>
+                <li>
+                  <a href="#"> <i class="fa fa-credit-card text-danger"> </i>Cartão de Ponto</a>
+                </li>
+                <li>
+                  <a href="#"> <i class="fa fa-bus text-danger"> </i>Vale Transporte</a>
+                </li>
+                <li>
+                  <a href="#"> <i class="fa fa-cutlery text-danger"> </i>Vale Refeição</a>
+                </li>
+                                          
+              </ul>
+            </li>
+
+          <li><a href="#enfermagemMenu" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-ambulance "></i>Enfermagem</a>
+            <ul id="enfermagemMenu" class="collapse list-unstyled ">                
+              <li>
+                <a href="#"> <i class="fa fa-stethoscope text-danger"> </i>Coren a Vencer</a>
+              </li>
+              <li>
+                <a href="#"> <i class="fa fa-heartbeat text-danger"> </i>Vácinas</a>
+              </li>
+              <li>
+                <a href="#"> <i class="fa fa-user-md text-danger"> </i>Exame Médico</a>
+              </li>
+              <li>
+                <a href="#"> <i class="fa fa-book text-danger"> </i>RCM</a>
+              </li>   
+            </ul>
+          </li>
+
+          <li><a href="#financeiroMenu" aria-expanded="false" data-toggle="collapse"> 
+            <i class="fa fa-money"></i>Financeiro</a>
+            <ul id="financeiroMenu" class="collapse list-unstyled ">                
+              <li>
+                <a href="#"> <i class="fa fa-list-alt text-danger"> </i> Contas a Pagar</a>
+              </li>
+              <li>
+                <a href="#"> <i class="fa fa-list-ol text-danger"> </i> Fatura Consolidado</a>
+              </li>
+              <li>
+                <a href="#"> <i class="fa fa-calculator text-danger"> </i>Orçamentos Aprovados</a>
+              </li>
+              <li>
+                <a href="#"> <i class="fa fa-check-circle text-danger"> </i>Pagamentos Realizados</a>
+              </li>  
+              <li>
+                <a href="#"> <i class="fa fa-window-restore text-danger"> </i>Emissão de Faturas</a>
+              </li> 
+              <li>
+                <a href="#"> <i class="fa fa-plus-circle text-danger"> </i>Cadastrar Orçamento</a>
+              </li> 
+              <li>
+                <a href="#"> <i class="fa fa-file-text text-danger"> </i>Relatório Manutenção</a>
+              </li> 
+            </ul>
+          </li>
+            
+          <li><a href="#manutencaoMenu" aria-expanded="false" data-toggle="collapse"> 
+            <i class="fa fa-cog"></i>Manutenção</a>
+            <ul id="manutencaoMenu" class="collapse list-unstyled ">                
+              <li>
+                <a href="#"> <i class="fa fa-plus-circle  text-danger"> </i>Cadastrar Orçamento</a>
+              </li>
+              <li>
+                <a href="#"> <i class="fa fa-file-text  text-danger"> </i>Relatórios</a>
+              </li>
+              <li>
+                <a href="#"> <i class="fa fa-calculator  text-danger"> </i>Aprovados</a>
+              </li>
+              <li>
+                <a href="#"> <i class="fa fa-circle-o-notch text-danger"> </i>Pendencias</a>
+              </li>
+              <li>
+                <a href="#"> <i class="fa fa-plus  text-danger"> </i>Cadastrar OS</a>
+              </li>
+              <li>
+                <a href="#"> <i class="fa fa-pie-chart text-danger"> </i>Gestão</a>
+              </li>
+              <li>
+                <a href="#"> <i class="fa fa-calendar text-danger"> </i>Data Entrega OS (?)</a>
+              </li>  
+              <li>
+                <a href="#"> <i class="fa fa-list text-danger"> </i>Lista de Entrega da OS</a>
+              </li> 
+            </ul>
+          </li>
+
+          <li><a href="#protocolosMenu" aria-expanded="false" data-toggle="collapse"> 
+            <i class="fa fa-wpforms"></i>Protocolos</a>
+            <ul id="protocolosMenu" class="collapse list-unstyled ">                
+              
+            </ul>
+          </li>
+
+          <li><a href="#patrimonioMenu" aria-expanded="false" data-toggle="collapse"> 
+            <i class="fa fa-rebel"></i>Patrimonio</a>
+            <ul id="patrimonioMenu" class="collapse list-unstyled ">                
+              <li>
+                <a href="#"> <i class="fa fa-search text-danger"> </i>Busca Avançada</a>
+              </li>
+            </ul>
+          </li>
+
+          <li><a href="#FerramentasMenu" aria-expanded="false" data-toggle="collapse"> 
+            <i class="fa fa-wrench"></i>Ferramentas</a>
+            <ul id="FerramentasMenu" class="collapse list-unstyled ">                
+              
+            </ul>
+          </li>
+          
+          
           </ul>
           
         </div>

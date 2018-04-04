@@ -1,4 +1,15 @@
+
+
 tbl_funcionario
 tbl_contato
 tbl_dependentes
 tbl_parentesco
+tbl_funcionario_cargo
+tbl_cargos
+tbl_funcionario_status
+tbl_funcionario_funcao
+tbl_funcionario_unidade
+tbl_unidades
+tbl_funcionario_horario
+
+tbl_funcionario_plantoes

@@ -110,7 +110,7 @@ h2 {
   padding: 15px 0;
   font-size: 0.85em;
   font-weight: 300;
-  color: #999;
+  color: #1d2124;
   margin-bottom: 0;
 }
 
@@ -1229,7 +1229,7 @@ select.form-control {
 }
 
 select.form-control option {
-  color: #999;
+  color: #1d2124;
   font-weight: 300;
 }
 

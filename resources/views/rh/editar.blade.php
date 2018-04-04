@@ -221,12 +221,12 @@
                                                     </td>
                                                 </tr>
                                         @foreach($dados['dependentes'] as $dependente)
-                                           <tr>
-                                               <td>{{$dependente->nm_nome}}</td>
-                                               <td>
-                                                   {{$dependente->nm_parentesco}}
+                                            <tr>
+                                                <td>{{$dependente->nm_nome}}</td>
+                                                <td>
+                                                    {{$dependente->nm_parentesco}}
                                                 </td>
-                                               <td>{{$dependente->dt_nascimento}}</td>
+                                                <td>{{$dependente->dt_nascimento}}</td>
                                                <td>
                                                     @if($dependente->cd_sexo == 1)
                                                         Masculino
@@ -502,8 +502,8 @@
                                             <option @if($item->cd_rgpro_status == 0)selected @endif value="0">Não Possui</option>
                                             <option @if($item->cd_rgpro_status == 1)selected @endif value="1">Ativo</option>
                                             <option @if($item->cd_rgpro_status == 2)selected @endif value="2">Inativo</option>                                               
-                                        </select></td>
-                                     
+                                        </select>
+                                        </td>                                     
                                     <td>
                                         <label for="obs_rgpro">Observações</label>                                    
                                      </td>
@@ -536,9 +536,20 @@
                                 </div>
                             </div>
                             <table class="table table-sm table-align-left">
-                                
-                                <tr>
-                                    
+                            @foreach($dados['infoContrato'] as $infoContrato)
+                                <tr>     
+                                    <td>
+                                        <label for="nm_cargo">Cargo</label>                                    
+                                    </td>
+                                    <td  colspan="">
+                                        <select name="nm_cargo" class="form-control">
+                                        @foreach($dados['cargos'] as $cargo)
+                                            <option 
+                                                @if($infoContrato->nm_cargo == $cargo->nm_cargo) selected @endif                                            
+                                            value="{{$cargo->cd_codigo}}">{{$cargo->nm_cargo}}</option>
+                                        @endforeach                                            
+                                        </select>
+                                    </td>                               
                                     <td>
                                         <label for="dt_admissao_geral">Data Admissão</label>                                    
                                     </td>
@@ -550,7 +561,70 @@
                                     <td  colspan="">
                                         <input type="text" name="dt_demissao_geral" value="{{$item->dt_demissao_geral}}" class="form-control-sm form-control">
                                     </td>                      
+                                </tr>                                
+                                <tr>                                  
+                                    <td>
+                                        <label for="">Função</label>                                    
+                                     </td>
+                                    <td  colspan="">
+                                        <select name="cd_funcao" class="form-control">                                       
+                                            <option @if($infoContrato->cd_funcao == 0) selected @endif value=""></option>
+                                            <option @if($infoContrato->cd_funcao == 50) selected @endif value="$infoContrato->cd_funcao">Técnico de Video Cirurgia</option>
+                                        </select>
+                                    </td>    
+                                    <td>
+                                        <label for="">Unidade</label>                                    
+                                        </td>
+                                    <td  colspan="">
+                                        <select name="nm_unidade" class="form-control">
+                                        @foreach($dados['unidades'] as $unidade)
+                                            <option 
+                                                @if($infoContrato->nm_unidade == $unidade->nm_unidade) selected @endif                                            
+                                            value="{{$unidade->cd_codigo}}">{{$unidade->nm_unidade}}
+                                            </option>                                        
+                                        @endforeach 
+                                         </select>
+                                    </td>
+                                    <td>
+                                        <label for="">Status</label>                                    
+                                    </td>
+                                    <td  colspan="">
+                                        <select name="cd_status" class="form-control">
+                                            <option @if($infoContrato->cd_status == 0) selected @endif value="0">Inativo</option>	  
+                                            <option @if($infoContrato->cd_status == 1) selected @endif value="1">Ativo</option>	  
+                                            <option @if($infoContrato->cd_status == 2) selected @endif  value="2">Férias</option>	  
+                                            <option @if($infoContrato->cd_status == 3) selected @endif  value="3">Licença</option>	  
+                                            <option @if($infoContrato->cd_status == 4) selected @endif  value="4">Demitido</option>	  
+                                            <option @if($infoContrato->cd_status == 5) selected @endif  value="5">Treinamento</option>
+                                        </select>
+                                    </td>                      
                                 </tr>
+                                <tr>
+                                    <td>
+                                        <label for="hr_entrada">Hora Entrada</label>                                    
+                                    </td>
+                                    <td  colspan="">
+                                            <input type="time" value="{{$infoContrato->hr_entrada}}" name="hr_entrada" class="form-control">                                        
+                                    </td>
+                                    <td>
+                                            <label for="hr_saida">Hora Saida</label>                                    
+                                        </td>
+                                        <td  colspan="">
+                                                <input type="time" value="{{$infoContrato->hr_saida}}" name="hr_saida" class="form-control">                                        
+                                    </td>
+                                    <td>
+                                            <label for="">Intervalo</label>                                    
+                                        </td>
+                                        <td  colspan="">                                            
+                                            <select name="nm_intervalo" class="form-control">
+                                                    <option value=""></option>
+                                                    <option @if($infoContrato->nm_intervalo == "1 Hora") selected @endif value="1 Hora">1 Hora</option>
+                                                    <option @if($infoContrato->nm_intervalo == "15 minutos") selected @endif value="15 minutos">15 minutos</option>
+                                                </select>
+                                        </td>                       
+                                </tr> 
+                                @endforeach
+
                             </table>
                             <div class="row row-categorias-funcionario">
                                 <div class="col-md">

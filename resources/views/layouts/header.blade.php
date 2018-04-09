@@ -10,7 +10,7 @@
     
 
 
-  <link href="/css/all.css" rel="stylesheet">
+  <link href="{{ URL::asset('/css/all.css') }}" rel="stylesheet">
 
 
     <!-- Favicon-->

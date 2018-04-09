@@ -7,23 +7,12 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
-    <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <!-- Font Awesome CSS-->
-    <link rel="stylesheet" href="/node_modules/font-awesome/css/font-awesome.min.css">
-    <!-- Custom Scrollbar-->
-    <link rel="stylesheet" href="/node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">    
-    <!-- Google fonts - Roboto -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    
 
-    <!-- Fontastic Custom icon font-->
-    <link rel="stylesheet" href="/css/fontastic.css">
-    <!-- jQuery Circle-->
-    <link rel="stylesheet" href="/css/grasp_mobile_progress_circle-1.0.0.min.css">
-    <!-- theme stylesheet-->
-    <link rel="stylesheet" href="/css/style.default.css" id="theme-stylesheet">
-    <!-- Custom stylesheet - for your changes-->
-    <link rel="stylesheet" href="/css/custom.css">
+
+  <link href="/css/all.css" rel="stylesheet">
+
+
     <!-- Favicon-->
     <link rel="shortcut icon" href="/img/favicon.ico">
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
@@ -159,7 +148,25 @@
           <li><a href="#protocolosMenu" aria-expanded="false" data-toggle="collapse"> 
             <i class="fa fa-wpforms"></i>Protocolos</a>
             <ul id="protocolosMenu" class="collapse list-unstyled ">                
-              
+              <li>
+                <a href="#"> <i class="fa fa-keyboard-o text-danger"> </i>Digitação</a>
+              </li>
+              <li>
+                <a href="#"> <i class="fa fa-eye text-danger"> </i>Ver e Alterar</a>
+              </li>
+              <li>
+                <a href="#"> <i class="fa fa-eye text-danger"> </i>Impres. de Formulário</a>
+              </li>
+
+              <li><a href="#relatorioProtocoloMenu" aria-expanded="false" data-toggle="collapse"> 
+              <i class="fa fa-file-text"></i>Relatórios</a>
+              <ul id="relatorioProtocoloMenu" class="collapse list-unstyled ">                
+                <li>
+                  <a href="#"> <i class="fa fa-search text-danger"> </i>Busca Avançada</a>
+                </li>               
+              </ul>
+            </li>
+
             </ul>
           </li>
 
@@ -169,13 +176,42 @@
               <li>
                 <a href="#"> <i class="fa fa-search text-danger"> </i>Busca Avançada</a>
               </li>
+              <li>
+                <a href="#"> <i class="fa fa-file-text-o text-danger"> </i>Serviços a Vencer</a>
+              </li>
+              <li>
+                <a href="#"> <i class="fa fa-file-text-o text-danger"> </i>Parque de Equipamento</a>
+              </li>
+              <li>
+                <a href="#"> <i class="fa fa-file-text-o text-danger"> </i>Rel. de equipamentos</a>
+              </li>
+              <li>
+                <a href="#"> <i class="fa fa-file-text-o text-danger"> </i>Invent. Equipamentos</a>
+              </li>
+              <li>
+                <a href="#"> <i class="fa fa-file-text-o text-danger"> </i>Planej. de Serviços</a>
+              </li>
+              <li>
+                <a href="#"> <i class="fa fa-file-text-o text-danger"> </i>Relação de Óticas</a>
+              </li>
+              <li>
+                <a href="#"> <i class="fa fa-file-text-o text-danger"> </i>Parque de Óticas</a>
+              </li>
             </ul>
           </li>
 
           <li><a href="#FerramentasMenu" aria-expanded="false" data-toggle="collapse"> 
             <i class="fa fa-wrench"></i>Ferramentas</a>
             <ul id="FerramentasMenu" class="collapse list-unstyled ">                
-              
+              <li>
+                <a href="#"> <i class="fa fa-building text-danger"> </i>Empresas</a>
+              </li>
+              <li>
+                <a href="#"> <i class="fa fa-camera text-danger"> </i>Materiais</a>
+              </li>
+              <li>
+           <a href="#"> <i class="fa fa-handshake-o text-danger"> </i>Fornecedores</a>
+              </li>
             </ul>
           </li>
           

@@ -166,10 +166,8 @@
                 </li>               
               </ul>
             </li>
-
             </ul>
           </li>
-
           <li><a href="#patrimonioMenu" aria-expanded="false" data-toggle="collapse"> 
             <i class="fa fa-rebel"></i>Patrimonio</a>
             <ul id="patrimonioMenu" class="collapse list-unstyled ">                
@@ -199,7 +197,6 @@
               </li>
             </ul>
           </li>
-
           <li><a href="#FerramentasMenu" aria-expanded="false" data-toggle="collapse"> 
             <i class="fa fa-wrench"></i>Ferramentas</a>
             <ul id="FerramentasMenu" class="collapse list-unstyled ">                
@@ -210,14 +207,12 @@
                 <a href="#"> <i class="fa fa-camera text-danger"> </i>Materiais</a>
               </li>
               <li>
-           <a href="#"> <i class="fa fa-handshake-o text-danger"> </i>Fornecedores</a>
+                <a href="#"> <i class="fa fa-handshake-o text-danger"> </i>Fornecedores</a>
               </li>
             </ul>
           </li>
-          
-          
           </ul>
-          
+         
         </div>
         
       </div>

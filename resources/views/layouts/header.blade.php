@@ -239,7 +239,7 @@
 
 
 
-
+<!--
 <footer class="main-footer">
         <div class="container-fluid">
           <div class="row">
@@ -253,6 +253,7 @@
           </div>
         </div>
       </footer>
+    -->
     </div>
     <!-- JavaScript files-->
     <script src="/node_modules/jquery/dist/jquery.min.js"></script>

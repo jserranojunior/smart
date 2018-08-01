@@ -11,8 +11,7 @@ class tbl_funcionario extends Model
 
     public function getFuncionariosAtivos(){
         
-        $funcionarios  = DB::table('tbl_funcionario')
-        ->select('cd_codigo','cd_matricula','nm_nome')
+        $funcionarios  = self::select('cd_codigo','cd_matricula','nm_nome')
         ->where('dt_demissao_geral', null)
         ->where('dt_admissao_geral', '<>', null)
         ->orderBy('nm_nome')

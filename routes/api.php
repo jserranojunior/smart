@@ -18,4 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('funcionarios', 'Api\Rh\FuncionariosController@index');
-Route::get('funcionarios/edit/{id}', 'Api\Rh\FuncionariosController@edit');
+Route::get('funcionarios/edit/{id}', 'Api\Rh\ApiFuncionariosController@edit');
+
+Route::get('financeiro', 'Api\Financeiro\ApiFinanceiroController@index');
+

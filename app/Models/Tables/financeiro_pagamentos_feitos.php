@@ -13,7 +13,7 @@ class financeiro_pagamentos_feitos extends Model
         $this->data = $data;
         $this->id = $id;
     
-        $this->pagamentoFeito = self::where(DB::raw("SUBSTRING(mes_referencia,1,7)"), '<=', $this->data)      
+        $this->pagamentoFeito = self::where(DB::raw("SUBSTRING(mes_referencia,1,7)"), '=', $this->data)      
         ->Where('id_conta', $this->id)
         ->take(1)
         ->get();  

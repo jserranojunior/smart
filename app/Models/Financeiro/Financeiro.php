@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Tables\contas_a_pagar;
 use App\Models\Tables\valor_contas_a_pagar;
 use App\Models\Tables\financeiro_pagamentos_feitos;
+use App\Models\Functions\Data;
 use DB;
 
 class Financeiro extends Model
@@ -13,11 +14,13 @@ class Financeiro extends Model
     public function __construct(
         contas_a_pagar $contasAPagar, 
         valor_contas_a_pagar $valorContasAPagar,
-        financeiro_pagamentos_feitos $pagamentosFeitos
+        financeiro_pagamentos_feitos $pagamentosFeitos,
+        Data $dataFunctions
         ){
         $this->contasAPagar = $contasAPagar;
         $this->valorContasAPagar = $valorContasAPagar;     
         $this->pagamentosFeitos = $pagamentosFeitos;   
+        $this->dataFunctions = $dataFunctions; 
     }
 
     public function index($request){
@@ -26,7 +29,23 @@ class Financeiro extends Model
             $this->data = $request->data;
             }else{
             $this->data = date('Y-m');
-        }/* End Request Date */
+        }
+        if($request->diaInicial > ''){
+            $diaInicial = $request->diaInicial;
+        }else{
+            $diaInicial = 1;
+        }
+        if($request->diaFinal > ''){
+            $diaFinal = $request->diaFinal;
+        }else{
+            $diaFinal = 31;
+        }
+        
+        
+        /* End Request Date */
+
+        $datas = $this->dataFunctions->financeiroIndex($this->data, $diaInicial, $diaFinal);
+        //dd($datas);
 
         $contas = $this->contasAPagar->contasMensais($this->data);           
         foreach($contas as $conta){              
@@ -42,7 +61,13 @@ class Financeiro extends Model
             } 
 
             foreach($pagamentoFeito as $pagamento){
-                $conta->tipo_pagamento = $pagamento->tipo_pagamento;
+                if($pagamento->tipo_pagamento == "Cheque"){
+                    $pagamento->cor_tipo_pagamento = "#ffa303";
+                }
+                if($pagamento->tipo_pagamento == "Transferência"){
+                    $pagamento->cor_tipo_pagamento = "#6f05d1";
+                }
+                $conta->cor_tipo_pagamento = $pagamento->cor_tipo_pagamento;
             }
 
         }       
@@ -50,17 +75,25 @@ class Financeiro extends Model
         
         
         /* ####### FILTERS #####*/            
-        if($request->order > ''){
-            $contas = $contas->sortBy($request->order);
+        if($request->ordem > ''){
+            $contas = $contas->sortBy($request->ordem);
         }
         if($request->area > ''){
             $contas = $contas->where('area','=', $request->area);
-        }/* END FILTERS */
+        }
+        $filtros = [
+            'ordem' => $request->ordem,
+            'area' => $request->area,
+        ];
+        /* END FILTERS */
+
+
 
         $somaContas = $contas->sum('valor');
 
         $contas = $contas->values()->all();
         $dados = ['contas' => $contas, 'total' => $somaContas];            
+        $dados = ['datas' => $datas, 'contas' => $contas, 'total' => $somaContas, 'filtros' => $filtros];            
         return $dados;       
     }
 

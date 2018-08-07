@@ -24,3 +24,4 @@ Route::get('variaveis', 'Rh\variaveisMensaisController@index')->name('variaveis'
 Route::get('diastrabalhados', 'Rh\diasTrabalhadosController@index')->name('diastrabalhados');
 
 Route::get('financeiro','Financeiro\FinanceiroController@index');
+Route::get('financeiro/editar/{id}/{data}','Financeiro\FinanceiroController@edit');

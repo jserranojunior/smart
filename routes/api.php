@@ -21,4 +21,5 @@ Route::get('funcionarios', 'Api\Rh\FuncionariosController@index');
 Route::get('funcionarios/edit/{id}', 'Api\Rh\ApiFuncionariosController@edit');
 
 Route::get('financeiro', 'Api\Financeiro\ApiFinanceiroController@index');
+Route::get('financeiro/edit/{id}/{data}', 'Api\Financeiro\ApiFinanceiroController@edit');
 

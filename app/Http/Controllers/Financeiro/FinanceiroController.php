@@ -13,10 +13,10 @@ class FinanceiroController extends Controller
         $this->financeiro = $financeiro;
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $financeiro = $this->financeiro->index();
-        $dados = ['contas' => $financeiro];
+        $financeiro = $this->financeiro->index($request);
+        $dados = $financeiro;
         return view('Financeiro.index')->with($dados);
     }
 
@@ -58,9 +58,11 @@ class FinanceiroController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, $data)
     {
-        //
+       // dd($request->date);
+        return($this->financeiro->edit($id, $data));
+        
     }
 
     /**

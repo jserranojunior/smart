@@ -48,7 +48,7 @@
 
         <ul id="side-admin-menu" class="side-menu list-unstyled">
           <li>
-            <a href="/">
+            <a href="{{url('/')}}">
               <i class="fa fa-home"></i>Inicio</a>
           </li>
           <li>

@@ -89,7 +89,7 @@ class Financeiro extends Model
 
 
 
-        $somaContas = $contas->sum('valor');
+        $somaContas = 0;
 
         $contas = $contas->values()->all();
         $dados = ['contas' => $contas, 'total' => $somaContas];            

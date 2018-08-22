@@ -15,7 +15,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
   
   <!-- Favicon-->
-  <link rel="shortcut icon" href="{{ URL::asset('/img/favicon.ico') }}">
+  <link rel="shortcut icon" href="{{{ url('/img/smart.png') }}}">
   <!-- Tweaks for older IEs-->
   <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>

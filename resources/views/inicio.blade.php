@@ -18,7 +18,7 @@
                         <h4>FUNCIONARIOS</h4>
                     </div>
                     <div class="card-body">
-                        <img class="img-fluid" src="/img/teamwork.jpg" alt="">
+                        <img class="img-fluid" src="{{ URL::asset('/img/teamwork.jpg') }}" alt="">
                     </div>
                 </div>
             </a>

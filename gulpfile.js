@@ -10,7 +10,6 @@ gulp.task('styles', function () {
     return gulp.src([
         './node_modules/bootstrap/dist/css/bootstrap.css',
 
-        './resources/assets/css/font-awesome.css',
         './resources/assets/css/fontastic.css',
 
         './node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css',

@@ -12,7 +12,7 @@ class ApiFinanceiroController extends Controller
     public function __construct(Financeiro $financeiro){
         $this->financeiro = $financeiro;
     }
-
+   
     public function index(Request $request)
     {        
         return($this->financeiro->index($request));
